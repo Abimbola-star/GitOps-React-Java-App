@@ -1,0 +1,31 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    meta.helm.sh/release-name: frontend
+    meta.helm.sh/release-namespace: default
+  creationTimestamp: "2025-06-03T02:33:15Z"
+  labels:
+    app.kubernetes.io/managed-by: Helm
+  name: frontend
+  namespace: default
+  resourceVersion: "9667"
+  uid: 5225dd01-21a3-435b-b5d9-cba7fd2bd263
+spec:
+  clusterIP: 172.20.225.14
+  clusterIPs:
+  - 172.20.225.14
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: frontend
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

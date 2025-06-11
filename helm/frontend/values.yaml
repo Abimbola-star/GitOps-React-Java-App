@@ -1,0 +1,8 @@
+replicaCount: 2
+
+image:
+  repository: abimbola1994/react-frontend
+  tag: latest
+
+service:
+  port: 80
