@@ -5,6 +5,6 @@ image:
   tag: latest
 
 service:
-  type: clusterIP
+  type: ClusterIP
   name: java-backend
   port: 8080
