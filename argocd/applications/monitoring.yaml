@@ -22,6 +22,10 @@ spec:
         prometheus:
           service:
             type: ClusterIP
+        prometheusOperator:
+          admissionWebhooks:
+            patch:
+              enabled: true
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
@@ -32,4 +36,5 @@ spec:
     syncOptions:
       - CreateNamespace=true
       - ServerSideApply=true
-      - Replace=true
+      - Replace=false
+      - ApplyOutOfSyncOnly=true
