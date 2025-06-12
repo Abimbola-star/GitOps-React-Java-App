@@ -24,17 +24,15 @@ spec:
             type: ClusterIP
         prometheusOperator:
           admissionWebhooks:
-            patch:
-              enabled: true
+            enabled: false
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
   syncPolicy:
     automated:
-      prune: true
+      prune: false
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
       - ServerSideApply=true
       - Replace=false
-      - ApplyOutOfSyncOnly=true
