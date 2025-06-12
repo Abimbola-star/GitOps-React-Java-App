@@ -21,12 +21,12 @@ spec:
             datasources:
             - name: Prometheus
               type: prometheus
-              url: http://prometheus-server.monitoring.svc.cluster.local
+              url: http://prometheus-server.metrics.svc.cluster.local
               access: proxy
               isDefault: true
   destination:
     server: https://kubernetes.default.svc
-    namespace: monitoring
+    namespace: metrics
   syncPolicy:
     automated:
       prune: true
