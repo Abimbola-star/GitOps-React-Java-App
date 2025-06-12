@@ -24,6 +24,36 @@ spec:
               url: http://prometheus-server.metrics.svc.cluster.local
               access: proxy
               isDefault: true
+        dashboards:
+          default:
+            kubernetes-cluster:
+              gnetId: 7249
+              revision: 1
+              datasource: Prometheus
+            node-exporter:
+              gnetId: 1860
+              revision: 27
+              datasource: Prometheus
+            prometheus-stats:
+              gnetId: 2
+              revision: 2
+              datasource: Prometheus
+            app-metrics:
+              gnetId: 10280
+              revision: 1
+              datasource: Prometheus
+        dashboardProviders:
+          dashboardproviders.yaml:
+            apiVersion: 1
+            providers:
+            - name: 'default'
+              orgId: 1
+              folder: ''
+              type: file
+              disableDeletion: false
+              editable: true
+              options:
+                path: /var/lib/grafana/dashboards/default
   destination:
     server: https://kubernetes.default.svc
     namespace: metrics
